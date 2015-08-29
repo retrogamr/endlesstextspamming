@@ -21,7 +21,6 @@ password = 'YOUR PASSWORD HERE'
 
 n = 10
 while True: 
-    n = n - 1
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username,password)
