@@ -19,11 +19,12 @@ msg = raw_input()
 username = 'YOUR EMAIL USERNAME HERE'
 password = 'YOUR PASSWORD HERE'
 
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.starttls()
+server.login(username,password)
+    
 n = 10
 while True: 
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.starttls()
-    server.login(username,password)
     server.sendmail(fromaddr, toaddrs, msg)
     
     #I only got it working with gmail, editing it to work with other email providers shouldn't be too difficult though.
